@@ -142,7 +142,7 @@ const seedData = async () => {
         title: '03. Building Custom React Hooks with Generics',
         description:
           'Extracting reusable logic into generic custom hooks with complete type inference and safety.',
-        videoUrl: 'https://www.youtube.com/watch?v=1jMJdbLBy1E',
+        videoUrl: 'https://www.youtube.com/watch?v=nViEqpgwxHE',
         order: 3,
       },
     ]);
@@ -190,7 +190,7 @@ const seedData = async () => {
         title: '02. React Server Components & Streaming',
         description:
           'Deep dive into server vs client components, fetching data on the server, and streaming with Suspense.',
-        videoUrl: 'https://www.youtube.com/watch?v=6a0L2L4W4c8',
+        videoUrl: 'https://www.youtube.com/watch?v=843nec-IvW0',
         order: 2,
       },
       {
@@ -210,7 +210,7 @@ const seedData = async () => {
         title: '01. Introduction to Async Python & FastAPI',
         description:
           'Why FastAPI is lightning fast, asynchronous request handling, path parameters, and automatic OpenAPI docs.',
-        videoUrl: 'https://www.youtube.com/watch?v=-ykeT6kkSpU',
+        videoUrl: 'https://www.youtube.com/watch?v=tLKKmouUams',
         order: 1,
       },
       {
@@ -218,7 +218,7 @@ const seedData = async () => {
         title: '02. Request Validation with Pydantic Schemas',
         description:
           'Data parsing, type hinting, request body validation, and structured error responses with Pydantic.',
-        videoUrl: 'https://www.youtube.com/watch?v=0RS9WACtIbg',
+        videoUrl: 'https://www.youtube.com/watch?v=7t2alSnE2-I',
         order: 2,
       },
       {
@@ -226,7 +226,7 @@ const seedData = async () => {
         title: '03. Database Operations with SQLAlchemy ORM',
         description:
           'Connecting to relational databases, defining models, writing session dependencies, and executing queries.',
-        videoUrl: 'https://www.youtube.com/watch?v=7pZ28vWAC70',
+        videoUrl: 'https://www.youtube.com/watch?v=SORiTsvnU28',
         order: 3,
       },
     ]);
