@@ -1,9 +1,11 @@
 import jwt from 'jsonwebtoken';
 import User from '../models/User.js';
+import { isDbConnected } from '../config/db.js';
+import { dataStore } from '../services/dataStore.js';
 
 // Generate JWT token helper
 const generateToken = (id) => {
-  return jwt.sign({ id }, process.env.JWT_SECRET, {
+  return jwt.sign({ id }, process.env.JWT_SECRET || 'supersecret_lms_jwt_key_2026', {
     expiresIn: '7d',
   });
 };
@@ -22,7 +24,18 @@ export const loginAdmin = async (req, res, next) => {
       });
     }
 
-    const user = await User.findOne({ email: email.toLowerCase() });
+    let user = null;
+    if (isDbConnected()) {
+      try {
+        user = await User.findOne({ email: email.toLowerCase() });
+      } catch {
+        user = null;
+      }
+    }
+
+    if (!user) {
+      user = await dataStore.findUserByEmail(email);
+    }
 
     if (!user) {
       return res.status(401).json({
@@ -59,7 +72,19 @@ export const loginAdmin = async (req, res, next) => {
 // @access  Private
 export const getMe = async (req, res, next) => {
   try {
-    const user = await User.findById(req.user._id).select('-password');
+    let user = null;
+    if (isDbConnected()) {
+      try {
+        user = await User.findById(req.user._id).select('-password');
+      } catch {
+        user = null;
+      }
+    }
+
+    if (!user) {
+      user = await dataStore.findUserById(req.user._id || req.user.id);
+    }
+
     res.json({
       success: true,
       user,
