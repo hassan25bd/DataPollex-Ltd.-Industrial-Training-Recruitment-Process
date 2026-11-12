@@ -54,6 +54,33 @@ const seedData = async () => {
         'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&auto=format&fit=crop&q=80',
     });
 
+    const course4 = await Course.create({
+      title: 'Next.js 15 & Modern Full-Stack Architecture',
+      description:
+        'Learn production-ready Next.js with App Router, React Server Components (RSC), Server Actions, authentication patterns, and scalable deployment.',
+      price: 44.99,
+      thumbnail:
+        'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&auto=format&fit=crop&q=80',
+    });
+
+    const course5 = await Course.create({
+      title: 'Python & FastAPI for High-Performance APIs',
+      description:
+        'Build blazing-fast asynchronous backend services with Python, FastAPI, Pydantic type validation, database migrations, and clean RESTful design.',
+      price: 34.99,
+      thumbnail:
+        'https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=800&auto=format&fit=crop&q=80',
+    });
+
+    const course6 = await Course.create({
+      title: 'DevOps Essentials: Docker, CI/CD & Cloud',
+      description:
+        'Master modern software delivery. Learn containerization with Docker, automated testing with GitHub Actions CI/CD pipelines, and cloud production hosting.',
+      price: 29.99,
+      thumbnail:
+        'https://images.unsplash.com/photo-1618401471353-b98aedd04e11?w=800&auto=format&fit=crop&q=80',
+    });
+
     console.log('Sample courses created.');
 
     // 3. Create Lectures for Course 1
@@ -144,6 +171,90 @@ const seedData = async () => {
         description:
           'Writing Dockerfiles, multi-stage builds, docker-compose configuration, and environment isolation.',
         videoUrl: 'https://www.youtube.com/watch?v=9zUHg7xjIqQ',
+        order: 3,
+      },
+    ]);
+
+    // 6. Create Lectures for Course 4
+    await Lecture.create([
+      {
+        course: course4._id,
+        title: '01. Next.js 15 App Router & Project Setup',
+        description:
+          'Getting started with Next.js 15, understanding file-system based routing, layouts, and page components.',
+        videoUrl: 'https://www.youtube.com/watch?v=wm5gMKuwSYk',
+        order: 1,
+      },
+      {
+        course: course4._id,
+        title: '02. React Server Components & Streaming',
+        description:
+          'Deep dive into server vs client components, fetching data on the server, and streaming with Suspense.',
+        videoUrl: 'https://www.youtube.com/watch?v=6a0L2L4W4c8',
+        order: 2,
+      },
+      {
+        course: course4._id,
+        title: '03. Server Actions & Form Mutations',
+        description:
+          'Handling form submissions directly on the server without manual API endpoints using Server Actions.',
+        videoUrl: 'https://www.youtube.com/watch?v=dDpZfOQBMaU',
+        order: 3,
+      },
+    ]);
+
+    // 7. Create Lectures for Course 5
+    await Lecture.create([
+      {
+        course: course5._id,
+        title: '01. Introduction to Async Python & FastAPI',
+        description:
+          'Why FastAPI is lightning fast, asynchronous request handling, path parameters, and automatic OpenAPI docs.',
+        videoUrl: 'https://www.youtube.com/watch?v=-ykeT6kkSpU',
+        order: 1,
+      },
+      {
+        course: course5._id,
+        title: '02. Request Validation with Pydantic Schemas',
+        description:
+          'Data parsing, type hinting, request body validation, and structured error responses with Pydantic.',
+        videoUrl: 'https://www.youtube.com/watch?v=0RS9WACtIbg',
+        order: 2,
+      },
+      {
+        course: course5._id,
+        title: '03. Database Operations with SQLAlchemy ORM',
+        description:
+          'Connecting to relational databases, defining models, writing session dependencies, and executing queries.',
+        videoUrl: 'https://www.youtube.com/watch?v=7pZ28vWAC70',
+        order: 3,
+      },
+    ]);
+
+    // 8. Create Lectures for Course 6
+    await Lecture.create([
+      {
+        course: course6._id,
+        title: '01. Docker Fundamentals & Multi-Stage Builds',
+        description:
+          'Containers vs Virtual Machines, writing optimized Dockerfiles, multi-stage builds, and docker-compose.',
+        videoUrl: 'https://www.youtube.com/watch?v=fqMOX6JJhGo',
+        order: 1,
+      },
+      {
+        course: course6._id,
+        title: '02. Automated Testing with GitHub Actions',
+        description:
+          'Creating CI workflows, running linters and test suites on pull requests, and matrix testing.',
+        videoUrl: 'https://www.youtube.com/watch?v=R8_veQiYBjI',
+        order: 2,
+      },
+      {
+        course: course6._id,
+        title: '03. Production Deployment & Monitoring',
+        description:
+          'Deploying containerized apps to cloud providers, managing environment secrets, and monitoring application health.',
+        videoUrl: 'https://www.youtube.com/watch?v=pTFZFxd4hOI',
         order: 3,
       },
     ]);
