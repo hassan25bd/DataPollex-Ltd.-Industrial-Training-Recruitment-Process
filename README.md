@@ -97,11 +97,6 @@ Launch both the backend API and frontend application concurrently:
 ```bash
 npm run dev
 ```
-
-- **Frontend Application**: [http://localhost:5173](http://localhost:5173)
-- **Backend API Server**: [http://localhost:5000](http://localhost:5000)
-- **Health Check**: [http://localhost:5000/api/health](http://localhost:5000/api/health)
-
 ---
 
 ## 📂 Project Architecture
