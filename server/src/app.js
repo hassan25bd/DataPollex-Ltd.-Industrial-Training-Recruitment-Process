@@ -5,13 +5,14 @@ import morgan from 'morgan';
 import authRoutes from './routes/authRoutes.js';
 import courseRoutes from './routes/courseRoutes.js';
 import lectureRoutes from './routes/lectureRoutes.js';
+import seedRoutes from './routes/seedRoutes.js';
 import { notFound, errorHandler } from './middleware/errorHandler.js';
 
 const app = express();
 
 // Middlewares
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:5173',
+  origin: '*',
   credentials: true,
 }));
 app.use(express.json());
@@ -30,6 +31,7 @@ app.get('/api/health', (req, res) => {
 app.use('/api/auth', authRoutes);
 app.use('/api/courses', courseRoutes);
 app.use('/api/lectures', lectureRoutes);
+app.use('/api/seed', seedRoutes);
 
 // Error Handling Middlewares
 app.use(notFound);

@@ -2,6 +2,8 @@
 
 A full-stack Learning Management System developed for the **DataPollex Ltd. — Industrial Training Recruitment Process**.
 
+🌐 **Live Demo URL**: [https://datapollex-lms.vercel.app](https://datapollex-lms.vercel.app)
+
 The platform is designed with two core experiences:
 1. **Student Panel (Public)**: Browse available courses, view detailed course curriculums, and stream video lectures with an embedded responsive player.
 2. **Admin Dashboard (Protected)**: Secure authentication and comprehensive management (CRUD) for courses and video lectures.
